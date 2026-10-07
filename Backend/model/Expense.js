@@ -11,25 +11,25 @@ const expenseSchema = new mongoose.Schema(
       required: true,
       trim: true,
     },
-    amount:{
-        type:Number,
-        required:true,
-        min:0
-    },
-    category:{
-              type: String,
+    amount: {
+      type: Number,
       required: true,
-      enum:["Food","Utilities", "Entertainment", "Work", "Other"]
+      min: 0,
     },
-    date:{
-        type:Date,
-        required:true,
-        default:Date.now,
+    category: {
+      type: String,
+      required: true,
+      enum: ["Food", "Utilities", "Entertainment", "Work", "Other"],
+    },
+    date: {
+      type: Date,
+      required: true,
+      default: Date.now,
     },
   },
   {
     timestamps: true,
   },
 );
-const Expense = mongoose.model("Expense",expenseSchema)
+const Expense = mongoose.model("Expense", expenseSchema);
 export default Expense;
